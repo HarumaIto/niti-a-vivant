@@ -1,0 +1,6 @@
+.DS_Store
+# 元写真と作業用の画像は公開しない
+Images_Base/
+/*.jpg
+/*.jpeg
+/*.png

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#303233" />
+    <meta
+      name="description"
+      content="組織VIVANTとそのメンバーを紹介するページ。"
+    />
+    <title>VIVANT | 組織紹介</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section
+        id="intro-screen"
+        class="screen screen--intro is-active"
+        aria-labelledby="intro-title"
+      >
+        <img
+          class="intro-poster"
+          src="Images_Poster/vivant-poster.jpg"
+          width="2000"
+          height="1415"
+          alt="赤いVIVANTのロゴを背に並ぶ7人のメンバーのポスター。「敵か味方か、味方か敵か―― この夏、冒険が始まる。」"
+        />
+
+        <div class="intro-content">
+          <h1 id="intro-title" class="visually-hidden">VIVANT 組織紹介</h1>
+          <button id="enter-button" class="enter-button" type="button" disabled>
+            <span>組織紹介へ</span>
+            <span class="enter-button__arrow" aria-hidden="true">↗</span>
+          </button>
+          <p id="load-status" class="load-status" role="status" hidden></p>
+        </div>
+      </section>
+
+      <section
+        id="profile-screen"
+        class="screen screen--profiles"
+        aria-label="組織紹介"
+        aria-hidden="true"
+        inert
+      >
+        <header class="profile-header">
+          <div class="profile-header__lead">
+            <button id="back-button" class="back-button" type="button">
+              <span aria-hidden="true">←</span> TOP
+            </button>
+            <span class="profile-header__brand">VIVANT</span>
+          </div>
+          <div class="page-tabs" role="tablist" aria-label="ページ切り替え">
+            <button
+              id="tab-characters"
+              class="page-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-characters"
+            >
+              <span class="page-tab__en">CHARACTER</span>
+              <span class="page-tab__ja">登場人物</span>
+            </button>
+            <button
+              id="tab-mission"
+              class="page-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-mission"
+              tabindex="-1"
+            >
+              <span class="page-tab__en">MISSION</span>
+              <span class="page-tab__ja">ミッション</span>
+            </button>
+          </div>
+          <span id="profile-counter" class="profile-header__counter">00 / 00</span>
+        </header>
+
+        <div id="panel-characters" class="profile-layout" role="tabpanel" aria-labelledby="tab-characters">
+          <article id="profile-detail" class="profile-detail" aria-live="polite">
+            <div class="detail-image-wrap">
+              <img id="detail-image" class="detail-image" alt="" />
+            </div>
+            <div class="detail-copy">
+              <span id="detail-index" class="detail-index">PROFILE 01</span>
+              <p id="detail-name-en" class="detail-name-en"></p>
+              <h2 id="detail-name" class="detail-name" tabindex="-1"></h2>
+              <span class="detail-rule" aria-hidden="true"></span>
+              <p id="detail-affiliation" class="detail-affiliation"></p>
+            </div>
+          </article>
+
+          <section class="roster" aria-label="メンバー一覧">
+            <div class="roster-heading">
+              <h2>メンバー一覧</h2>
+              <span>SELECT A MEMBER</span>
+            </div>
+            <div id="thumbnail-list" class="thumbnail-list"></div>
+          </section>
+        </div>
+
+        <div id="panel-mission" class="mission-panel" role="tabpanel" aria-labelledby="tab-mission" tabindex="0" hidden>
+          <div class="mission-inner">
+            <header class="mission-intro">
+              <span class="mission-intro__label">HALLOWEEN MISSION</span>
+              <h2 class="mission-intro__title">スクールからの指令</h2>
+              <p class="mission-intro__lead"><span>ミッションを達成するごとに、</span><span>お菓子を1個プレゼント！</span></p>
+            </header>
+            <ol class="mission-list">
+              <li class="mission-card">
+                <span class="mission-card__number">MISSION 1</span>
+                <h3 class="mission-card__title">アクティビティを達成する</h3>
+                <p class="mission-card__reward"><span>REWARD</span>お菓子 1個</p>
+              </li>
+              <li class="mission-card">
+                <span class="mission-card__number">MISSION 2</span>
+                <h3 class="mission-card__title">ロードマップの目標を書く</h3>
+                <p class="mission-card__reward"><span>REWARD</span>お菓子 1個</p>
+              </li>
+              <li class="mission-card">
+                <span class="mission-card__number">MISSION 3</span>
+                <h3 class="mission-card__title">寿司打のスコアを更新する</h3>
+                <p class="mission-card__reward"><span>REWARD</span>お菓子 1個</p>
+              </li>
+            </ol>
+            <p class="mission-note">達成したら、近くのメンターに声をかけてね。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

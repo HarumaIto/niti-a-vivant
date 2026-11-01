@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "はるっぺ",
+    "nameEn": "haruppe",
+    "affiliation": "名古屋日曜スクール",
+    "role": "CA",
+    "imageThumb": "Images_Cutout/IMG_4099.png",
+    "imageLarge": "Images_Cutout/IMG_4099.png",
+    "sourceFile": "IMG_4099.jpg"
+  },
+  {
+    "id": 2,
+    "name": "やな",
+    "nameEn": "yana",
+    "affiliation": "名古屋日曜スクール",
+    "role": "Unityメンター",
+    "imageThumb": "Images_Cutout/IMG_4102.png",
+    "imageLarge": "Images_Cutout/IMG_4102.png",
+    "sourceFile": "IMG_4102.jpg"
+  },
+  {
+    "id": 3,
+    "name": "むむむ",
+    "nameEn": "mumumu",
+    "affiliation": "名古屋日曜スクール",
+    "role": "Unityメンター",
+    "imageThumb": "Images_Cutout/IMG_4105.png",
+    "imageLarge": "Images_Cutout/IMG_4105.png",
+    "sourceFile": "IMG_4105.jpg"
+  },
+  {
+    "id": 4,
+    "name": "ショコラ",
+    "nameEn": "chocolat",
+    "affiliation": "名古屋日曜スクール",
+    "role": "Unityメンター",
+    "imageThumb": "Images_Cutout/IMG_4114.png",
+    "imageLarge": "Images_Cutout/IMG_4114.png",
+    "sourceFile": "IMG_4114.jpg"
+  },
+  {
+    "id": 5,
+    "name": "AIゴゴティー",
+    "nameEn": "gogotie",
+    "affiliation": "名古屋日曜スクール",
+    "role": "Unityメンター",
+    "imageThumb": "Images_Cutout/IMG_4110.png",
+    "imageLarge": "Images_Cutout/IMG_4110.png",
+    "sourceFile": "IMG_4110.jpg"
+  },
+  {
+    "id": 6,
+    "name": "とろろ",
+    "nameEn": "tororo",
+    "affiliation": "名古屋日曜スクール",
+    "role": "WebS/iPhoneメンター",
+    "imageThumb": "Images_Cutout/IMG_4106.png",
+    "imageLarge": "Images_Cutout/IMG_4106.png",
+    "sourceFile": "IMG_4106.jpg"
+  },
+  {
+    "id": 7,
+    "name": "DJ",
+    "nameEn": "DJ",
+    "affiliation": "名古屋日曜スクール",
+    "role": "CM",
+    "imageThumb": "Images_Cutout/IMG_4120.png",
+    "imageLarge": "Images_Cutout/IMG_4120.png",
+    "sourceFile": "IMG_4120.jpg"
+  },
+  {
+    "id": 8,
+    "name": "わきそう",
+    "nameEn": "wakisou",
+    "affiliation": "名古屋スクール",
+    "role": "WebS/iPhoneメンター",
+    "imageThumb": "Images_Cutout/wakisou.png",
+    "imageLarge": "Images_Cutout/wakisou.png",
+    "sourceFile": "1793492316457.jpg"
+  }
+]
