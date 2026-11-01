@@ -82,6 +82,7 @@ function selectPerson(id, animate = true) {
   delete detailImage.dataset.fallback;
   detailImage.src = person.imageLarge;
   detailImage.alt = `${person.name}のポートレート`;
+  detailImage.style.setProperty("--mobile-focus-x", person.mobileFocusX ?? "48%");
   detailName.textContent = person.name;
   detailNameEn.textContent = person.nameEn;
   detailAffiliation.textContent = `${person.affiliation}　${person.role}`;

@@ -7,6 +7,7 @@
     "role": "CA",
     "imageThumb": "Images_Cutout/IMG_4099.png",
     "imageLarge": "Images_Cutout/IMG_4099.png",
+    "mobileFocusX": "60%",
     "sourceFile": "IMG_4099.jpg"
   },
   {
@@ -57,6 +58,7 @@
     "role": "WebS/iPhoneメンター",
     "imageThumb": "Images_Cutout/IMG_4106.png",
     "imageLarge": "Images_Cutout/IMG_4106.png",
+    "mobileFocusX": "54%",
     "sourceFile": "IMG_4106.jpg"
   },
   {

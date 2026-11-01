@@ -12,6 +12,6 @@ python3 -m http.server 8000
 
 ## 人物・所属の編集
 
-[`people.json`](people.json) の各人物の `name`（表示名）、`nameEn`（ローマ字名）、`affiliation`（所属）、`role`（役割）を編集します。所属と役割は全角スペースでつないで表示されます。人物の追加・削除は配列の項目を増減するだけで反映されます。`id` は重複させず、画像の `imageThumb` と `imageLarge` は既存ファイルへの相対パスにしてください。`sourceFile` は元写真との対応を記録するための任意項目です。
+[`people.json`](people.json) の各人物の `name`（表示名）、`nameEn`（ローマ字名）、`affiliation`（所属）、`role`（役割）を編集します。所属と役割は全角スペースでつないで表示されます。人物の追加・削除は配列の項目を増減するだけで反映されます。`id` は重複させず、画像の `imageThumb` と `imageLarge` は既存ファイルへの相対パスにしてください。`sourceFile` は元写真との対応を記録するための任意項目です。スマホで顔が切れる場合は、任意項目の `mobileFocusX` で画像の横位置を調整できます（既定は `"48%"`。値を大きくすると画像の右側が見えます）。
 
 背景を除いた素材は `Images_Cutout/`、元写真は `Images_Base/`、タイトル画面のポスターは `Images_Poster/` にあります。
