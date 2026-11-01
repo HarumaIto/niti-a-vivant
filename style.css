@@ -75,6 +75,14 @@ button:focus-visible { outline: 2px solid var(--red-bright); outline-offset: 4px
   padding: clamp(12px, 2.4vh, 22px) 16px clamp(16px, 3vh, 28px);
   text-align: center;
 }
+.screen--intro.can-skip { cursor: pointer; }
+.intro-action { display: grid; place-items: center; min-height: 54px; }
+.intro-action > * { grid-area: 1 / 1; }
+.intro-progress { width: min(240px, 60vw); height: 3px; overflow: hidden; background: rgba(255, 255, 255, .22); }
+.intro-progress span { display: block; height: 100%; background: var(--red-bright); transform: scaleX(0); transform-origin: left; }
+.intro-progress.is-running span { animation: intro-progress linear forwards; }
+.intro-content:not(.is-counting) .intro-progress { display: none; }
+.intro-content.is-counting .enter-button:not(:focus-visible) { width: 1px; min-width: 0; height: 1px; min-height: 0; padding: 0; overflow: hidden; opacity: 0; }
 .enter-button {
   display: inline-flex;
   align-items: center;
@@ -97,6 +105,7 @@ button:focus-visible { outline: 2px solid var(--red-bright); outline-offset: 4px
 .enter-button:disabled { opacity: .5; cursor: not-allowed; }
 .enter-button__arrow { font-family: Arial, sans-serif; font-size: 22px; font-weight: 400; line-height: 1; }
 .load-status { margin: 12px auto 0; color: #eadcdc; font-size: 12px; line-height: 1.7; }
+@keyframes intro-progress { to { transform: scaleX(1); } }
 @keyframes poster-arrive { from { opacity: 0; transform: scale(1.03); } to { opacity: 1; transform: scale(1); } }
 
 @media (max-aspect-ratio: 1/1) {

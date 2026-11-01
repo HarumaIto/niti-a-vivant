@@ -14,8 +14,16 @@ const profileCounter = document.getElementById("profile-counter");
 const enterButton = document.getElementById("enter-button");
 const backButton = document.getElementById("back-button");
 const loadStatus = document.getElementById("load-status");
+const introPoster = document.getElementById("intro-poster");
+const introContent = document.getElementById("intro-content");
+const introProgress = document.querySelector(".intro-progress");
+const introProgressBar = document.getElementById("intro-progress-bar");
 const pageTabs = [...document.querySelectorAll(".page-tab")];
 const charactersTab = document.getElementById("tab-characters");
+
+const AUTO_ADVANCE_MS = 3000;
+let canSkipIntro = false;
+let autoAdvanceTimer = null;
 
 function numberLabel(number) {
   return String(number).padStart(2, "0");
@@ -154,10 +162,46 @@ pageTabs.forEach((tab, index) => {
   });
 });
 
-enterButton.addEventListener("click", () => {
+function enterProfiles() {
+  window.clearTimeout(autoAdvanceTimer);
+  setIntroSkippable(false);
+  introContent.classList.remove("is-counting");
   selectTab(charactersTab);
   showScreen("profiles");
+}
+
+function setIntroSkippable(skippable) {
+  canSkipIntro = skippable;
+  introScreen.classList.toggle("can-skip", skippable);
+}
+
+// ポスターが表示されてから自動遷移までの時間を数え始めます。
+function startAutoAdvance() {
+  if (!canSkipIntro) return;
+  introProgressBar.style.animationDuration = `${AUTO_ADVANCE_MS}ms`;
+  introProgress.classList.add("is-running");
+  autoAdvanceTimer = window.setTimeout(enterProfiles, AUTO_ADVANCE_MS);
+}
+
+function whenPosterSettled(callback) {
+  if (introPoster.complete) {
+    callback();
+    return;
+  }
+  introPoster.addEventListener("load", callback, { once: true });
+  introPoster.addEventListener("error", callback, { once: true });
+}
+
+introScreen.addEventListener("click", () => {
+  if (canSkipIntro) enterProfiles();
 });
+document.addEventListener("keydown", (event) => {
+  if (!canSkipIntro || (event.key !== "Enter" && event.key !== " ")) return;
+  event.preventDefault();
+  enterProfiles();
+});
+
+enterButton.addEventListener("click", enterProfiles);
 backButton.addEventListener("click", () => showScreen("intro"));
 
 async function loadPeople() {
@@ -179,12 +223,16 @@ async function loadPeople() {
     if (people.length > 0) {
       selectPerson(people[0].id, false);
       enterButton.disabled = false;
+      setIntroSkippable(true);
+      whenPosterSettled(startAutoAdvance);
     } else {
+      introContent.classList.remove("is-counting");
       loadStatus.textContent = "人物データがありません。people.json に追加してください。";
       loadStatus.hidden = false;
     }
   } catch (error) {
     console.error("人物データの読み込みに失敗しました:", error);
+    introContent.classList.remove("is-counting");
     loadStatus.textContent = "people.json を読み込めません。ローカルサーバーから開いてください。";
     loadStatus.hidden = false;
   }

@@ -21,6 +21,7 @@
         aria-labelledby="intro-title"
       >
         <img
+          id="intro-poster"
           class="intro-poster"
           src="Images_Poster/vivant-poster.jpg"
           width="2000"
@@ -28,12 +29,17 @@
           alt="赤いVIVANTのロゴを背に並ぶ7人のメンターのポスター。「敵か味方か、味方か敵か―― この夏、冒険が始まる。」"
         />
 
-        <div class="intro-content">
+        <div id="intro-content" class="intro-content is-counting">
           <h1 id="intro-title" class="visually-hidden">VIVANT 組織紹介</h1>
-          <button id="enter-button" class="enter-button" type="button" disabled>
-            <span>組織紹介へ</span>
-            <span class="enter-button__arrow" aria-hidden="true">↗</span>
-          </button>
+          <div class="intro-action">
+            <div class="intro-progress" aria-hidden="true">
+              <span id="intro-progress-bar"></span>
+            </div>
+            <button id="enter-button" class="enter-button" type="button" disabled>
+              <span>組織紹介へ</span>
+              <span class="enter-button__arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
           <p id="load-status" class="load-status" role="status" hidden></p>
         </div>
       </section>
